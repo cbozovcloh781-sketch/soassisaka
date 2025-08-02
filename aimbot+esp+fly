@@ -439,7 +439,7 @@ end)
 
 -- Helper functions
 local function sectionHeader(text)
-    local lbl = Instance.new("TextLabel", scroll)
+    local lbl = Instance.new("TextLabel", innerContainer)
     lbl.Text = text
     lbl.Size = UDim2.new(1, -10, 0, 24)
     lbl.Font = Enum.Font.GothamBold
@@ -449,7 +449,7 @@ local function sectionHeader(text)
 end
 
 local function toggle(label, default, callback)
-    local btn = Instance.new("TextButton", scroll)
+    local btn = Instance.new("TextButton", innerContainer)
     btn.Size = UDim2.new(1, -10, 0, 28)
     btn.Text = label .. ": " .. (default and "ON" or "OFF")
     btn.Font = Enum.Font.Gotham
@@ -467,7 +467,7 @@ local function toggle(label, default, callback)
 end
 
 local function slider(label, min, max, value, callback)
-    local container = Instance.new("Frame", scroll)
+    local container = Instance.new("Frame", innerContainer)
     container.Size = UDim2.new(1, -10, 0, 36)
     container.BackgroundTransparency = 1
 
@@ -516,7 +516,7 @@ local function slider(label, min, max, value, callback)
 end
 
 local function colorPicker(labelText, currentColor, callback)
-    local lbl = Instance.new("TextLabel", scroll)
+    local lbl = Instance.new("TextLabel", innerContainer)
     lbl.Text = labelText
     lbl.TextColor3 = Color3.new(1,1,1)
     lbl.BackgroundTransparency = 1
@@ -536,7 +536,7 @@ local function colorPicker(labelText, currentColor, callback)
         Color3.fromRGB(255, 165, 0),
     }
 
-    local row = Instance.new("Frame", scroll)
+    local row = Instance.new("Frame", innerContainer)
     row.Size = UDim2.new(1, -10, 0, 28)
     row.BackgroundTransparency = 1
 
@@ -558,7 +558,7 @@ local function colorPicker(labelText, currentColor, callback)
 end
 
 local function keyBindButton(name, currentKey, callback)
-    local btn = Instance.new("TextButton", scroll)
+    local btn = Instance.new("TextButton", innerContainer)
     btn.Size = UDim2.new(1, -10, 0, 24)
     btn.Text = name .. " Hotkey: [" .. tostring(currentKey.Name) .. "]"
     btn.BackgroundColor3 = Color3.fromRGB(40,40,40)
